@@ -151,7 +151,7 @@
               "value": "[concat('AccountEndpoint=', reference(resourceId('Microsoft.DocumentDB/databaseAccounts', variables('itemServiceCosmosDbName'))).documentEndpoint, ';AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', variables('itemServiceCosmosDbName')), '2015-04-08').primaryMasterKey)]"
             }
           ],
-          "alwaysOn": true,
+          "alwaysOn": false,
           "cors": {
             "allowedOrigins": ["*"]
           }

@@ -162,7 +162,7 @@
               "value": "x-functions-key"
             }
           ],
-          "alwaysOn": true,
+          "alwaysOn": false,
           "cors": {
             "allowedOrigins": [
               "*"

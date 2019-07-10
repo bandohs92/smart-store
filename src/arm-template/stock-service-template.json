@@ -39,7 +39,10 @@
     },
     "storageAccountsKind": {
       "type": "string",
-      "allowedValues": ["Storage", "StorageV2"]
+      "allowedValues": [
+        "Storage",
+        "StorageV2"
+      ]
     },
     "storageAccountsSuffix": {
       "type": "string",
@@ -74,7 +77,11 @@
     },
     "stockServiceSqlDatabaseSkuTier": {
       "type": "string",
-      "allowedValues": ["Basic", "Standard", "Premium"]
+      "allowedValues": [
+        "Basic",
+        "Standard",
+        "Premium"
+      ]
     },
     "stockServiceSqlDatabaseMaxDataSize": {
       "type": "int",
@@ -84,7 +91,10 @@
     },
     "stockServiceSqlDatabaseMaxDataSizeUnit": {
       "type": "string",
-      "allowedValues": ["GB", "MB"],
+      "allowedValues": [
+        "GB",
+        "MB"
+      ],
       "metadata": {
         "description": "Select the unit of SQL Database Max Data Size."
       }
@@ -264,9 +274,11 @@
               "value": "[concat('AccountEndpoint=', reference(resourceId('Microsoft.DocumentDB/databaseAccounts', variables('stockServiceCosmosDbName'))).documentEndpoint, ';AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', variables('stockServiceCosmosDbName')), '2015-04-08').primaryMasterKey)]"
             }
           ],
-          "alwaysOn": true,
+          "alwaysOn": false,
           "cors": {
-            "allowedOrigins": ["*"]
+            "allowedOrigins": [
+              "*"
+            ]
           }
         }
       },
@@ -321,9 +333,11 @@
               "value": "[concat('Server=tcp:', reference(variables('stockServiceSqlServerName')).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('stockServiceSqlDatabaseName'), ';Persist Security Info=False;User ID=', reference(variables('stockServiceSqlServerName')).administratorLogin, ';Password=', parameters('stockServiceSqlServerAdminPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
             }
           ],
-          "alwaysOn": true,
+          "alwaysOn": false,
           "cors": {
-            "allowedOrigins": ["*"]
+            "allowedOrigins": [
+              "*"
+            ]
           }
         }
       },
@@ -382,9 +396,11 @@
               "value": "[concat('Server=tcp:', reference(variables('stockServiceSqlServerName')).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('stockServiceSqlDatabaseName'), ';Persist Security Info=False;User ID=', reference(variables('stockServiceSqlServerName')).administratorLogin, ';Password=', parameters('stockServiceSqlServerAdminPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
             }
           ],
-          "alwaysOn": true,
+          "alwaysOn": false,
           "cors": {
-            "allowedOrigins": ["*"]
+            "allowedOrigins": [
+              "*"
+            ]
           }
         }
       },

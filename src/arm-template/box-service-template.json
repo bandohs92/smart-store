@@ -210,7 +210,7 @@
               "value": "[concat('Endpoint=', reference(resourceId('Microsoft.Devices/IotHubs', variables('boxIotHubName')), '2018-04-01').eventHubEndpoints.events.endpoint, ';SharedAccessKeyName=', listKeys(resourceId('Microsoft.Devices/IotHubs', variables('boxIotHubName')), '2018-04-01').value[0].keyName, ';SharedAccessKey=', listKeys(resourceId('Microsoft.Devices/IotHubs', variables('boxIotHubName')), '2018-04-01').value[0].primaryKey, ';EntityPath=', reference(resourceId('Microsoft.Devices/IotHubs', variables('boxIotHubName')), '2018-04-01').eventHubEndpoints.events.path)]"
             }
           ],
-          "alwaysOn": true,
+          "alwaysOn": false,
           "cors": {
             "allowedOrigins": [
               "*"
